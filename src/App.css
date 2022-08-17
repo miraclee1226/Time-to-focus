@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Josefin+Sans&family=Silkscreen&display=swap');
+*{
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: auto;
+  height: 50px;
+  font-size: 20px;
+  font-family: 'Silkscreen', cursive;
   color: white;
+  background-color: #ffdddd;
+  border-style: solid;
+  border-width: 15px;
+  border-radius: 35px;
 }
 
-.App-link {
-  color: #61dafb;
+.rightnav {
+  display: flex;
+  width: 400px;
+  height: 400px;
+  background-color: #ffe5dd;
+  margin-left: 15px;
+  border-radius: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.date {
+  display: flex;
+  
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  justify-content: flex-start;
+  margin: 0 0 15px 15px;
+
 }
