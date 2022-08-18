@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Josefin+Sans&family=Silkscreen&display=swap');
 *{
   margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
 }
+
 
 .nav {
   display: flex;
@@ -11,29 +12,63 @@
   width: auto;
   height: 50px;
   font-size: 20px;
-  font-family: 'Silkscreen', cursive;
   color: white;
   background-color: #ffdddd;
   border-style: solid;
   border-width: 15px;
-  border-radius: 35px;
-}
-
-.rightnav {
-  display: flex;
-  width: 400px;
-  height: 400px;
-  background-color: #ffe5dd;
-  margin-left: 15px;
-  border-radius: 35px;
+  border-radius: 30px;
 }
 
 .date {
   display: flex;
-  
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 30px;
   justify-content: flex-start;
-  margin: 0 0 15px 15px;
+  margin: 0 0 15px 50px;
 
 }
+
+.leftnav {
+  width: 250px;
+  height: 540px;
+  background-color: #ffe5dd;
+  padding-top: 30px;
+  border-radius: 20px;
+}
+
+.leftnav a {
+  text-decoration: none;
+  color:rgb(11, 23, 35);
+  font-size: 20px;
+}
+
+.todoLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  margin-left: 30px;
+}
+
+.todayContent {
+  margin-left: 50px;
+}
+
+.todayMainContent{
+  width: 1170px;
+  height: 100px;
+  background-color: #ffe5dd;
+  border-radius: 20px;
+}
+
+.todoContent{
+  display: flex;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.todayContent h1 {
+  margin-bottom: 15px;
+}
+
+
+
