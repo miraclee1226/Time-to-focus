@@ -53,14 +53,14 @@
   margin-left: 50px;
 }
 
-.todayMainContent{
+.todayMainContent {
   width: 1170px;
   height: 100px;
   background-color: #ffe5dd;
   border-radius: 20px;
 }
 
-.todoContent{
+.todoContent {
   display: flex;
   margin-left: 15px;
   margin-right: 15px;
@@ -68,6 +68,58 @@
 
 .todayContent h1 {
   margin-bottom: 15px;
+}
+
+.textList {
+  margin-top: 30px;
+}
+
+.textList p {
+  font-size: 20px;
+}
+
+.inputButton {
+  margin-top: 10px;
+}
+
+.inputButton input {
+  width: 1080px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  padding-left: 20px;
+  margin-bottom: 50px;
+  background-color: rgb(233, 233, 233);
+}
+
+.inputButton button {
+  width: 60px;
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  outline: 0;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.inputButton button:hover {
+  background-color:#ffe5dd;
+}
+
+.todoList {
+  display: flex;
+  align-items: center;
+  width: 1100px;
+  height: 40px;
+  font-size: 15px;
+  border: 0;
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  background-color: rgb(233, 233, 233);
 }
 
 
