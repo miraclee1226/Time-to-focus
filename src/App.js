@@ -72,6 +72,7 @@ function App() {
               </div>
             </div>
 
+
            {
               list.map((textArr, i) => {
                 return (
