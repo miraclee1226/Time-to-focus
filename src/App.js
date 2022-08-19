@@ -72,13 +72,22 @@ function App() {
               </div>
             </div>
 
-            {
-              list.map((textArr) => {
+           {
+              list.map((textArr, i) => {
                 return (
-                  <TextList usertext={textArr} />
+                  <div className='todoList'>
+                    <button>완료</button>
+                    <p>{textArr}</p>
+                    <button onClick={()=>{
+                      let copy = [...list];
+                      copy.splice(i, 1);
+                      setList(copy);
+                    }}>삭제</button>
+                  </div>
                 )
               })
             }
+
             
           </div>
         </div>
@@ -87,6 +96,49 @@ function App() {
         <Route path='/tomorrowtodo' element= {
           <div className='todoContent'>
             <Todo />
+            <div className='todayContent'>
+              <h1>내일</h1>
+
+              <div className='textList'>
+                <p>할 일</p>
+                <div className='inputButton'>
+                  <input 
+                    type="text" 
+                    onChange={(e)=>{
+                      setText(e.target.value);
+                    }} 
+                    onKeyUp={(e)=> {
+                      e.target.value.length > 0
+                      ? setIsValid(true) 
+                      : setIsValid(false);
+                    }}
+                    value={text}
+                    placeholder='✔ 할 일 추가' />
+                    <button 
+                    type='button'
+                    onClick={post}
+                    disabled={isValid ? false : true}
+                    >버튼</button>
+                </div>
+              </div>
+
+              {
+              list.map((textArr, i) => {
+                return (
+                  <div className='todoList'>
+                    <button>완료</button>
+                    <p>{textArr}</p>
+                    <button onClick={()=>{
+                      let copy = [...list];
+                      copy.splice(i, 1);
+                      setList(copy);
+                    }}>삭제</button>
+                  </div>
+                )
+              })
+            }
+
+            </div>
           </div>
           } />
 
@@ -107,6 +159,7 @@ function App() {
 
 function Todo() {
   return(
+
       <div className='leftnav'>
         <div className='todoLink'>
           <Link to ="/">🌞 오늘 할 일</Link>
@@ -118,13 +171,19 @@ function Todo() {
   )
 }
 
-function TextList(props) {
-  return (
-    <div className='todoList'>
-      <p>{props.usertext}</p>
-    </div>
-  )
-}
+// function TextList(props) {
+//   return (
+//     <div className='todoList'>
+//       <button>완료</button>
+//       <p>{props.usertext}</p>
+//       <button onClick={()=>{
+//         let copy = [...list];
+//         copy.splice(i, 1);
+//         setList(copy);
+//       }}>삭제</button>
+//     </div>
+//   )
+// }
 
 
 
