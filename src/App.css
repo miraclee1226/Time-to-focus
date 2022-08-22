@@ -54,10 +54,28 @@
 }
 
 .todayMainContent {
-  width: 1170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 18px;
+  width: 500px;
   height: 100px;
+  padding-left: 15px;
   background-color: #ffe5dd;
   border-radius: 20px;
+}
+
+.mainAndtimer {
+  display: flex;
+  justify-content: space-between;
+  width: 1185px;
+
+}
+
+.timer {
+  width: 650px;
+  height: auto;
+  background-color:antiquewhite;
 }
 
 .todoContent {
