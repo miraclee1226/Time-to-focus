@@ -24,13 +24,17 @@
   font-size: 30px;
   justify-content: flex-start;
   margin: 0 0 15px 50px;
+}
 
+.allContent {
+  display: flex;
 }
 
 .leftnav {
   width: 250px;
   height: 540px;
   background-color: #ffe5dd;
+  margin-left: 15px;
   padding-top: 30px;
   border-radius: 20px;
 }
