@@ -1,6 +1,7 @@
-import userEvent from '@testing-library/user-event';
-import {useState, useEffect, Link} from 'react';
-
+// import userEvent from '@testing-library/user-event';
+import React from 'react';
+import {useState, useEffect, useRef} from 'react';
+import Timer from './Timer'
 
 
 function Home () {
@@ -9,8 +10,9 @@ function Home () {
     let [list, setList] = useState([])
     let [isValid, setIsValid] = useState(false)
     let [done , setDone] = useState(0)
-    let [min, setMin] = useState('')
+    let [min, setMin] = useState('25')
     let [sec, setSec] = useState('0')
+    
     
     
 
@@ -23,6 +25,13 @@ function Home () {
         )
     }, []);
 
+    // useEffect(()=> {
+    //     const timerId = setTimeout(() => {
+            
+    //     }, 1000);
+    // })
+
+    
     function post (e) {
         const copyList = [...list];
         copyList.push(text);
@@ -30,46 +39,38 @@ function Home () {
         setText('');
     }
 
-    const onMinChange = (e)=> {
-        setMin(e.target.value);
-    }
+    // const onMinChange = (e)=> {
+    //     setMin(e.target.value);
+    // }
 
-    const onSecChange = (e)=> {
-        setSec(e.target.value);
-    }
+    // const onSecChange = (e)=> {
+    //     setSec(e.target.value);
+    // }
 
     return (
         <div className='todoContent'>
             
             <div className='todayContent'>
-            <div className='mainAndtimer'>
-                <div>
-                <h1>오늘</h1>
-                
-                <div className='todayMainContent'>
-                    <p>완료한 시간</p>
-                    <p>완료한 작업{done}</p>
+                <div className='mainAndtimer'>
+                    <div>
+                        <h1>오늘</h1>
+                        
+                        <div className='todayMainContent'>
+                            <p>완료한 시간</p>
+                            <p>완료한 작업{done}</p>
+                        </div>
+                    </div>
+                    {/* <Timer min={min} sec={sec} /> */}
+                    <div className="timer">
+                        
+                        <h2>
+                            {min} : {sec}
+                        </h2>
+                    <button onClick={<Timer min={min} sec={sec} />}>Start</button>
+                    </div>
+
+
                 </div>
-                </div>
-                <div className='timer'>
-                    <input 
-                        type='number'
-                        placeholder= '0'
-                        value={min}
-                        onChange= {onMinChange}
-                        />
-                    <span>m</span>
-                    <input 
-                        type='number'
-                        placeholder= '0'
-                        value={sec}
-                        onChange= {onSecChange}
-                        />
-                    <span>s</span>
-                    <button>start</button>
-                    
-                </div>
-            </div>
 
             {/* 할 일 */}
             <div className='textList'>
@@ -120,5 +121,8 @@ function Home () {
         </div>
     )
 }
+
+
+
 
 export default Home
