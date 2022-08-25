@@ -13,16 +13,27 @@ function Timer(props) {
   
     const [min, setMin] = useState(padNumber(tempMin, 2));
     const [sec, setSec] = useState(padNumber(tempSec, 2));
-    const [finish, setFinish] = useState('finish')
-  
+    const [isActive, setIsActive] = useState(false);
+
+    function toggle() {
+      setIsActive(!isActive);
+    }
+
+
     useEffect(() => {
-      interval.current = setInterval(() => {
-        initialTime.current -= 1;
-        setSec(padNumber(initialTime.current % 60, 2));
-        setMin(padNumber(parseInt((initialTime.current / 60) % 60), 2));
-      }, 1000);
+      if (isActive) {
+        interval.current = setTimeout(() => {
+          initialTime.current -= 1;
+          setSec(padNumber(initialTime.current % 60, 2));
+          setMin(padNumber(parseInt((initialTime.current / 60) % 60), 2));
+        }, 1000);
+      } else if(!isActive && min !== 0 && sec !== 0) {
       return () => clearInterval(interval.current);
-    }, []);
+      }
+
+      return ()=> clearInterval(interval.current)
+    }, [isActive, min, sec]);
+
 
     useEffect(() => {
         if (initialTime.current <=0) {
@@ -38,6 +49,9 @@ function Timer(props) {
           <h2>
             {min} : {sec}
           </h2>
+          <button onClick={toggle}>
+            {isActive ?  'Pause' : 'Start'}
+          </button>
         </div>
       );
 }
