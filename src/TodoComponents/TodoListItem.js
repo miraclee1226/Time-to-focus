@@ -3,10 +3,10 @@ import { MdOutlineCheckBox } from "react-icons/md"
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md"
 import { FaRegTrashAlt } from "react-icons/fa"
 
-function TodoListItem({textValue, id, checked, onRemove, onToggle}) {
+function TodoListItem({textValue, id, checked, onRemove, onToggle, addDone, removeDone}) {
 
   // let [list, setList] = useState([])
-  // let [done , setDone] = useState(0)
+ 
 
 
 
@@ -17,8 +17,8 @@ function TodoListItem({textValue, id, checked, onRemove, onToggle}) {
           <div onClick={onToggle(id)} className='checkbox'>  
           { 
           checked ? 
-          <MdOutlineCheckBox className='checkbox'/> : 
-          <MdOutlineCheckBoxOutlineBlank className='checkbox'/>
+          <MdOutlineCheckBox onClick={removeDone} className='checkbox'/> : 
+          <MdOutlineCheckBoxOutlineBlank onClick={addDone} className='checkbox'/>
           }
           </div>
           <p className={checked ? 'line' : 'noLine'}>{textValue}</p>
