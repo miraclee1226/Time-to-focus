@@ -84,8 +84,9 @@
 
 .todoContent {
   display: flex;
-  margin-left: 15px;
+
   margin-right: 15px;
+  flex-direction: column;
 }
 
 .todayContent h1 {
@@ -94,6 +95,10 @@
 
 .textList {
   margin-top: 30px;
+  
+}
+.textList2 {
+  margin-left: 50px;
 }
 
 .textList p {
@@ -142,6 +147,56 @@
   margin-bottom: 10px;
   padding-left: 20px;
   background-color: rgb(233, 233, 233);
+}
+
+
+
+
+/* TodoListItem Component */
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+  
+}
+
+svg {
+  width: 23px;
+  height: 23px;
+}
+
+.removebox{
+  display: flex;
+  cursor: pointer;
+}
+
+.todolistitemStyle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1080px;
+  height: 50px;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  background-color: bisque;
+  border-radius: 10px;
+}
+
+.checkboxAndcontent {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.noline {
+  color: black;
 }
 
 
