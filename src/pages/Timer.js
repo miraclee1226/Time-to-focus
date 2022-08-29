@@ -19,17 +19,21 @@ function Timer(props) {
       setIsActive(!isActive);
     }
 
+    // function reset() {
+    //   setMin('25');
+    //   setSec('0');
+    //   setIsActive(false);
+    // }
 
     useEffect(() => {
       if (isActive) {
         interval.current = setTimeout(() => {
           initialTime.current -= 1;
-          setSec(padNumber(initialTime.current % 60, 2));
           setMin(padNumber(parseInt((initialTime.current / 60) % 60), 2));
+          setSec(padNumber(initialTime.current % 60, 2));
         }, 1000);
-      } else if(!isActive && min !== 0 && sec !== 0) {
-      return () => clearInterval(interval.current);
-      }
+      } else if(!isActive && min !== 0 && sec !== 0) 
+      clearInterval(interval.current);
 
       return ()=> clearInterval(interval.current)
     }, [isActive, min, sec]);
@@ -44,14 +48,13 @@ function Timer(props) {
 
     return (
         <div className="timer">
-          
-          <h3>You have...</h3>
-          <h2>
+          <h2 className='minAndsec'>
             {min} : {sec}
           </h2>
           <button onClick={toggle}>
             {isActive ?  'Pause' : 'Start'}
           </button>
+          {/* <button onClick={reset}>Reset</button> */}
         </div>
       );
 }

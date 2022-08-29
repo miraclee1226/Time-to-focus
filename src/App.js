@@ -1,11 +1,16 @@
 import './App.css';
+import React from 'react';
 import {useState, useEffect} from 'react';
-import { Routes, Route, Link } from 'react-router-dom'
+import {Routes, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
-import Home from './pages/Home.js'
+import Home from './pages/Home'
 import Tomorrow  from './pages/Tomorrow';
 import Someday from './pages/Someday'
 import Complete from './pages/Complete'
+
+
+
+
 
 
 
@@ -26,6 +31,7 @@ function App() {
     <div className='App'>
       <div className='nav'>
         <h4>Pomodoro</h4>
+        
       </div>
       <div className='date'>{time.toLocaleTimeString()}</div>
       <div className='allContent'>
