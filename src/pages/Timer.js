@@ -6,31 +6,46 @@ function padNumber (num, length){
 };
 
 function Timer(props) {
-    const tempMin = props.min ? parseInt(props.min) : 0;
-    const tempSec = props.sec ? parseInt(props.sec) : 0;
-    const initialTime = useRef(tempMin * 60 + tempSec);
-    const interval = useRef(null);
   
-    const [min, setMin] = useState(padNumber(tempMin, 2));
-    const [sec, setSec] = useState(padNumber(tempSec, 2));
-    const [isActive, setIsActive] = useState(false);
+  const [min, setMin] = useState(padNumber(parseInt(props.min), 2));
+  const [sec, setSec] = useState(padNumber(parseInt(props.sec), 2));
+  const [min2, setMin2] = useState(padNumber(parseInt(props.min2), 2));
+  const [sec2, setSec2] = useState(padNumber(parseInt(props.sec2), 2));
+  const initialTime = useRef(parseInt(props.min) * 60 + parseInt(props.sec));
+  const initialTime2 = useRef(parseInt(props.min2) * 60 + parseInt(props.sec2));
+  const interval = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+  
+  function toggle() {
+    setIsActive(!isActive);
+  }
 
-    function toggle() {
-      setIsActive(!isActive);
-    }
+  function reset() {
+    initialTime.current = 1500
+    interval.current = 5
 
-    // function reset() {
-    //   setMin('25');
-    //   setSec('0');
-    //   setIsActive(false);
-    // }
+    interval.current = setInterval(() => {
+      initialTime.current -= 1;
+      const setMinpad = padNumber(parseInt(initialTime.current / 60), 2)
+      setMin(setMinpad);
+      const seSecPad =padNumber(initialTime.current % 60, 2)
+      setSec(seSecPad);
+    }, 1000);
 
-    useEffect(() => {
+      clearInterval(interval.current);
+  }
+  // console.log(reset);
+
+
+  
+  useEffect(() => {
       if (isActive) {
-        interval.current = setTimeout(() => {
+        interval.current = setInterval(() => {
           initialTime.current -= 1;
-          setMin(padNumber(parseInt((initialTime.current / 60) % 60), 2));
-          setSec(padNumber(initialTime.current % 60, 2));
+          const setMinpad = padNumber(parseInt(initialTime.current / 60), 2)
+          setMin(setMinpad);
+          const seSecPad =padNumber(initialTime.current % 60, 2)
+          setSec(seSecPad);
         }, 1000);
       } else if(!isActive && min !== 0 && sec !== 0) 
       clearInterval(interval.current);
@@ -39,25 +54,29 @@ function Timer(props) {
     }, [isActive, min, sec]);
 
 
-    useEffect(() => {
-        if (initialTime.current <=0) {
-          alert('Finish!')
+    useEffect(() => {  
+        if (initialTime.current <= 0) {
           clearInterval(interval.current);
+          alert('rest')
         }
-      }, [sec]);
+        return ()=> clearInterval(interval.current)
+      }, [sec])
+      
+        return (
+            <div className="timer">
+              <h2 className='minAndsec'>
+                {min} : {sec}
+              </h2>
+              <button onClick={toggle}>
+                {isActive ?  'Pause' : 'Start'}
+              </button>
+              <button onClick={reset}>Reset</button>
+            </div>
+          );
+      
+      };
 
-    return (
-        <div className="timer">
-          <h2 className='minAndsec'>
-            {min} : {sec}
-          </h2>
-          <button onClick={toggle}>
-            {isActive ?  'Pause' : 'Start'}
-          </button>
-          {/* <button onClick={reset}>Reset</button> */}
-        </div>
-      );
-}
+    
 
 
 
