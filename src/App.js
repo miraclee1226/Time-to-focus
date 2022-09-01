@@ -2,20 +2,14 @@ import './App.css';
 import React from 'react';
 import {useState, useEffect} from 'react';
 import {Routes, Route, Link } from 'react-router-dom'
-import styled from 'styled-components'
 import Home from './pages/Home'
 import Tomorrow  from './pages/Tomorrow';
 import Someday from './pages/Someday'
 import Complete from './pages/Complete'
-
-
-
-
-
+import Rest from './pages/Rest';
 
 
 function App() {
-
   let [time, setTime] = useState(new Date())
 
     useEffect(()=>{
@@ -31,8 +25,8 @@ function App() {
     <div className='App'>
       <div className='nav'>
         <h4>Pomodoro</h4>
-        
       </div>
+
       <div className='date'>{time.toLocaleTimeString()}</div>
       <div className='allContent'>
         <div className='leftnav'>
@@ -41,14 +35,16 @@ function App() {
             <Link to="/tomorrowtodo">📆 내일 할 일</Link>
             <Link to="/someday">📅 추후</Link>
             <Link to="/complete">✅ 완료</Link>
+            <Link to="/rest">😎 휴식</Link>
           </div>
         </div>
-        
+
         <Routes>
           <Route path='/' element= {<Home/>} />
           <Route path='/tomorrowtodo' element= {<Tomorrow/>} />
           <Route path='/someday' element= {<Someday/>} />
           <Route path='/complete' element= {<Complete/>} />
+          <Route path='/rest' element= {<Rest/>} />
         </Routes>
       </div>
     </div>
