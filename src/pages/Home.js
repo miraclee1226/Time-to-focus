@@ -11,15 +11,14 @@ import Complete from './Complete';
 
 function Home () {
     let [time, setTime] = useState(new Date())
-    let min = useState('25')
-    let sec = useState('0')
-    let [text, setText] = useState("")
-    let [list, setList] = useState([])
-    let [isValid, setIsValid] = useState(false)
+    let min = useState(25)
+    let sec = useState(0)
+    let restTime = useState(3)
+    let min2 = useState(10)
+    let sec2 = useState(0)
     let [done , setDone] = useState(0)
-
     let [todos, setTodos] = useState([])
-    let [complete, setComplete] = useState([]);
+    let [complete, setComplete] = useState([])
 
     function addTodo(text) {
         setTodos([
@@ -36,7 +35,6 @@ function Home () {
         } 
     }
     
-    
     const onToggle = function(id) {
         return function(e) {
             setTodos(
@@ -51,8 +49,15 @@ function Home () {
         setDone(done+1)
     }
 
-    function removeDone() {
+    function removeDone(text) {
         setDone(done-1)
+        setComplete([
+            ...complete,
+            {
+                id: Math.random().toString(), textValue: text, checked: true
+            }
+        ])
+
     }
 
     useEffect(()=>{
@@ -75,8 +80,8 @@ function Home () {
                             <p>완료한 작업{done}</p>
                         </div>
                     </div>
-                    <div className='timer'>
-                        <Timer min={min} sec={sec} />
+                    <div className='homeTimer'>
+                        <Timer min={min} sec={sec} min2={min2} sec2={sec2} restTime={restTime} />
                     </div>
                 </div>
             </div>
@@ -90,7 +95,6 @@ function Home () {
                         <TodoList todos={todos} onRemove={onRemove} onToggle={onToggle} addDone={addDone} removeDone={removeDone} />
                     </div>
                 </div>
-                {/* <Complete addComplete={addComplete}/> */}
             </div>
         </div>
     )
