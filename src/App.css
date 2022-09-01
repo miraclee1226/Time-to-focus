@@ -76,15 +76,18 @@
 
 }
 
-.timer {
+.homeTimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 650px;
   height: auto;
+  /* margin-left: 30px; */
   background-color:antiquewhite;
 }
 
 .todoContent {
   display: flex;
-
   margin-right: 15px;
   flex-direction: column;
 }
@@ -149,6 +152,39 @@
   background-color: rgb(233, 233, 233);
 }
 
+/* Timer Component */
+.timer {
+  display: flex;
+  align-items: center;
+  /* margin-left: 50px; */
+}
+.minAndsec {
+  font-size: 60px;
+  margin-right: 100px;
+}
+
+.timerBtns {
+  display: flex;
+  flex-direction: column
+}
+
+.firstTimeBtn { 
+  margin-bottom: 20px;
+}
+
+.timerBtns button {
+  height: 40px;
+  width: 100px;
+  border: none;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.timerBtns button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
 
 
 

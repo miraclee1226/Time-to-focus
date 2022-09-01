@@ -67,10 +67,14 @@ function Timer(props) {
               <h2 className='minAndsec'>
                 {min} : {sec}
               </h2>
-              <button onClick={toggle}>
-                {isActive ?  'Pause' : 'Start'}
-              </button>
-              <button onClick={reset}>Reset</button>
+              <div className='timerBtns'>
+                <button className='firstTimeBtn' onClick={toggle}>
+                  {isActive ?  'Pause' : 'Start'}
+                </button>
+                <button onClick={reset}>
+                  Reset
+                </button>
+              </div>
             </div>
           );
       
