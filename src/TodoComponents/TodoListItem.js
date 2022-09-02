@@ -2,7 +2,6 @@ import {useState, useEffect, useRef, Link} from 'react';
 import { MdOutlineCheckBox } from "react-icons/md"
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md"
 import { FaRegTrashAlt } from "react-icons/fa"
-import Complete from '../pages/Complete';
 
 function TodoListItem({textValue, id, checked, onRemove, onToggle, addDone, removeDone}) {
 
@@ -17,7 +16,7 @@ function TodoListItem({textValue, id, checked, onRemove, onToggle, addDone, remo
           { 
           checked ? 
           <MdOutlineCheckBox onClick={removeDone} className='checkbox'/> : 
-          <MdOutlineCheckBoxOutlineBlank onClick={()=>{addDone()}} className='checkbox'/>
+          <MdOutlineCheckBoxOutlineBlank onClick={addDone} className='checkbox'/>
           
           }
           </div>
