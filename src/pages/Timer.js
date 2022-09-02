@@ -69,10 +69,13 @@ function Timer(props) {
               </h2>
               <div className='timerBtns'>
                 <button className='firstTimeBtn' onClick={toggle}>
-                  {isActive ?  'Pause' : 'Start'}
+                  {isActive ?  'Stop' : 'Start'}
                 </button>
                 <button onClick={reset}>
                   Reset
+                </button>
+                <button>
+                  Coffee Time
                 </button>
               </div>
             </div>

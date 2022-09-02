@@ -82,6 +82,7 @@
   justify-content: center;
   width: 650px;
   height: auto;
+  padding-top: 20px;
   border-radius: 15px;
   background-color:antiquewhite;
 }
@@ -155,17 +156,20 @@
 /* Timer Component */
 .timer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   /* margin-left: 50px; */
 }
 .minAndsec {
   font-size: 60px;
-  margin-right: 100px;
+  margin-bottom: 15px;
 }
 
 .timerBtns {
   display: flex;
-  flex-direction: column
+  flex-direction: row;
+  justify-content: space-between;
+  width: 330px;
 }
 
 .firstTimeBtn { 
