@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef, Link} from 'react';
+import {useState} from 'react';
 
 
 function TodoInsert({onAddTodo}) {
@@ -12,6 +12,7 @@ function TodoInsert({onAddTodo}) {
     onAddTodo(newTodoItem);
     setNewTodoItem('');
   }
+
   // let [text, setText] = useState("")
   // let [list, setList] = useState([])
   // let [isValid, setIsValid] = useState(false)
