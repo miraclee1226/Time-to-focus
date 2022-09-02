@@ -42,7 +42,7 @@ function Tomorrow() {
                 }
                 }}
                 value={text2}
-                placeholder='✔ 할 일 추가' />
+                placeholder='✔ 할 일 추가 (Press Enter)' />
                 <button 
                 type='button'
                 onClick={post2}
