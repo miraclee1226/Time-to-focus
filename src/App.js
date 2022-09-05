@@ -8,17 +8,18 @@ import Someday from './pages/Someday'
 import Rest from './pages/Rest';
 
 
+
 function App() {
   let [time, setTime] = useState(new Date())
 
-    // useEffect(()=>{
-    // setInterval(() => {
-    //     setTime(new Date());
-    // }, 1000);
-    // return (
-    //     clearInterval()
-    //     )
-    // }, []);
+    useEffect(()=>{
+    setInterval(() => {
+        setTime(new Date());
+    }, 1000);
+    return (
+        clearInterval()
+        )
+    }, []);
 
   return (
     <div className='App'>
@@ -38,10 +39,10 @@ function App() {
         </div>
 
         <Routes>
-          <Route path='/' element= {<Home/>} />
-          <Route path='/tomorrowtodo' element= {<Tomorrow/>} />
-          <Route path='/someday' element= {<Someday/>} />
-          <Route path='/rest' element= {<Rest/>} />
+          <Route path='/' element= {<Home />} />
+          <Route path='/tomorrowtodo' element= {<Tomorrow />} />
+          <Route path='/someday' element= {<Someday />} />
+          <Route path='/rest' element= {<Rest />} />
         </Routes>
       </div>
     </div>
@@ -66,4 +67,4 @@ function App() {
 
 
 
-export default App;
+export default React.memo(App);
