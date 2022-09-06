@@ -4,14 +4,21 @@ import {useState, useCallback, useEffect} from 'react';
 import Timer from './Timer'
 import TodoInsert from '../TodoComponents/TodoInsert';
 import TodoList from '../TodoComponents/TodoList';
-import QuotesDatabase from '../RandomQuote/QuotesDatabase';
-
-
+import QuotesDatabase from '../QuotesDatabase';
 
 function Home () {
     let min = useState(25)
     let sec = useState(0)
-    let [done , setDone] = useState(0)
+    let [done , setDone] = useState(()=> {
+        if (typeof window !== "undefined") {
+          const saved = window.localStorage.getItem("doneInLocal");
+          if(saved !== null) {
+            return JSON.parse(saved);
+          } else {
+            return [];
+          }
+        }
+      });
     let [todos, setTodos] = useState(()=> {
         if (typeof window !== "undefined") {
           const saved = window.localStorage.getItem("todoInLocal1");
@@ -22,12 +29,11 @@ function Home () {
           }
         }
       });
-
-
     
     useEffect(()=> {
         window.localStorage.setItem("todoInLocal1", JSON.stringify(todos));
-      }, [todos]);
+        window.localStorage.setItem("doneInLocal", JSON.stringify(done));
+      }, [todos, done]);
     
     const addTodo = useCallback((text)=>{
         setTodos([
