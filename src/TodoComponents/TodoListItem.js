@@ -13,11 +13,9 @@ function TodoListItem({textValue, id, checked, onRemove, onToggle, addDone, remo
           checked ? 
           <MdOutlineCheckBox onClick={removeDone} className='checkbox'/> : 
           <MdOutlineCheckBoxOutlineBlank onClick={addDone} className='checkbox'/>
-          
           }
           </div>
           <p className={checked ? 'line' : 'noLine'}>{textValue}</p>
-          
       </div>
       <div className='removeboxDiv'>
         <FaRegTrashAlt className='removebox' onClick={onRemove(id)}/>

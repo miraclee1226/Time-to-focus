@@ -3,7 +3,7 @@ import { FaRegTrashAlt } from "react-icons/fa"
 
 function Tomorrow() {
 
-    let [text2, setText2] = useState("")
+    let [text2, setText2] = useState("");
     let [list2, setList2] = useState(()=> {
       if (typeof window !== "undefined") {
         const saved =  window.localStorage.getItem("todoInLocal2");
@@ -15,7 +15,7 @@ function Tomorrow() {
       }
     });
 
-    let [isValid2, setIsValid2] = useState(false)
+    let [isValid2, setIsValid2] = useState(false);
     
     useEffect(()=>{
       localStorage.setItem("todoInLocal2", JSON.stringify(list2));
@@ -26,8 +26,7 @@ function Tomorrow() {
         copyList2.push(text2);
         setList2(copyList2);
         setText2('');
-    }
-
+    };
 
     return (
       <div className='todoContent'>
@@ -41,7 +40,7 @@ function Tomorrow() {
                 type="text" 
                 onChange={(e)=>{
                   setText2(e.target.value);
-                }} 
+                }}
                 onKeyUp={(e)=> {
                   e.target.value.length > 0
                   ? setIsValid2(true) 

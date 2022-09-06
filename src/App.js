@@ -7,6 +7,33 @@ import Tomorrow  from './pages/Tomorrow';
 import Someday from './pages/Someday'
 import Rest from './pages/Rest';
 
+// import { configureStore } from '@reduxjs/toolkit';
+// import storage from 'redux-persist/lib/storage';
+// import { combineReducers } from 'redux';
+// import { persistReducer } from 'redux-persist';
+// import thunk from 'redux-thunk';
+
+// import counterReducer from '../features/counter/counterSlice';
+
+// const reducers = combineReducers({
+//   counter: counterReducer,
+// });
+
+// const persistConfig = {
+//   key: 'root',
+//   storage,
+// };
+
+// const persistedReducer = persistReducer(persistConfig, reducers);
+
+// const store = configureStore({
+//   reducer: persistedReducer,
+//   devTools: process.env.NODE_ENV !== 'production',
+//   middleware: [thunk],
+// });
+
+// export default store;
+
 
 
 function App() {
@@ -48,23 +75,6 @@ function App() {
     </div>
   );
 }
-
-
-
-// function TextList(props) {
-//   return (
-//     <div className='todoList'>
-//       <button>완료</button>
-//       <p>{props.usertext}</p>
-//       <button onClick={()=>{
-//         let copy = [...list];
-//         copy.splice(i, 1);
-//         setList(copy);
-//       }}>삭제</button>
-//     </div>
-//   )
-// }
-
 
 
 export default React.memo(App);

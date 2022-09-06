@@ -5,13 +5,15 @@ function TodoInsert({onAddTodo}) {
   let [newTodoItem, setNewTodoItem] = useState('');
 
   function todoInputHandler(e) {
+    e.preventDefault();
     setNewTodoItem(e.target.value);
   };
 
-  function addTodoHandler() {
+  function addTodoHandler(e) {
+    e.preventDefault();
     onAddTodo(newTodoItem);
     setNewTodoItem('');
-  }
+  };
   
   return(
   <div className='inputButton'>
