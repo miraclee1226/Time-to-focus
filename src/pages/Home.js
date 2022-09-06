@@ -1,6 +1,6 @@
 // import userEvent from '@testing-library/user-event';
 import React from 'react';
-import {useState, useCallback} from 'react';
+import {useState, useCallback, useEffect} from 'react';
 import Timer from './Timer'
 import TodoInsert from '../TodoComponents/TodoInsert';
 import TodoList from '../TodoComponents/TodoList';
@@ -12,8 +12,22 @@ function Home () {
     let min = useState(25)
     let sec = useState(0)
     let [done , setDone] = useState(0)
-    let [todos, setTodos] = useState([])
-    let [completeTime, setCompletetime] = useState('')
+    let [todos, setTodos] = useState(()=> {
+        if (typeof window !== "undefined") {
+          const saved = window.localStorage.getItem("todoInLocal1");
+          if(saved !== null) {
+            return JSON.parse(saved);
+          } else {
+            return [];
+          }
+        }
+      });
+
+
+    
+    useEffect(()=> {
+        window.localStorage.setItem("todoInLocal1", JSON.stringify(todos));
+      }, [todos]);
     
     const addTodo = useCallback((text)=>{
         setTodos([

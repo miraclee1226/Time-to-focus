@@ -4,12 +4,22 @@ import { FaRegTrashAlt } from "react-icons/fa"
 function Tomorrow() {
 
     let [text2, setText2] = useState("")
-    let [list2, setList2] = useState([])
+    let [list2, setList2] = useState(()=> {
+      if (typeof window !== "undefined") {
+        const saved =  window.localStorage.getItem("todoInLocal2");
+        if(saved !== null) {
+          return JSON.parse(saved);
+        } else {
+          return [];
+        }
+      }
+    });
+
     let [isValid2, setIsValid2] = useState(false)
-
-
-
-
+    
+    useEffect(()=>{
+      localStorage.setItem("todoInLocal2", JSON.stringify(list2));
+    }, [list2]);
 
     function post2 (e) {
         const copyList2 = [...list2];
@@ -18,7 +28,6 @@ function Tomorrow() {
         setText2('');
     }
 
-        
 
     return (
       <div className='todoContent'>
@@ -57,14 +66,14 @@ function Tomorrow() {
               <div className='todolistitemStyle'>
                 <div className='checkboxAndcontent'>
                   <p>{textArr2}</p>
-                  </div>
-                  <div className='removeboxDiv'>
-                    <FaRegTrashAlt className='removebox' onClick={()=>{
-                      let copy2 = [...list2];
-                      copy2.splice(i, 1);
-                      setList2(copy2);
-                    }}/>
-                  </div>
+                </div>
+                <div className='removeboxDiv'>
+                  <FaRegTrashAlt className='removebox' onClick={()=>{
+                    let copy2 = [...list2];
+                    copy2.splice(i, 1);
+                    setList2(copy2);
+                  }}/>
+                </div>
               </div>
             )
           })

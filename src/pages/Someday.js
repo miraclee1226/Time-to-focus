@@ -1,4 +1,5 @@
 
+import { type } from '@testing-library/user-event/dist/type';
 import {useState, useEffect} from 'react';
 import { FaRegTrashAlt } from "react-icons/fa"
 
@@ -6,12 +7,22 @@ import { FaRegTrashAlt } from "react-icons/fa"
 function Someday() {
 
     let [text2, setText2] = useState("")
-    let [list2, setList2] = useState([])
+    let [list2, setList2] = useState(()=> {
+      if (typeof window !== "undefined") {
+        const saved = window.localStorage.getItem("todoInLocal3");
+        if(saved !== null) {
+          return JSON.parse(saved);
+        } else {
+          return [];
+        }
+      }
+    });
+    
     let [isValid2, setIsValid2] = useState(false)
 
-
-
-
+    useEffect(()=>{
+      window.localStorage.setItem("todoInLocal3", JSON.stringify(list2));
+    }, [list2]);
 
     function post2 (e) {
         const copyList2 = [...list2];
@@ -19,8 +30,6 @@ function Someday() {
         setList2(copyList2);
         setText2('');
     }
-
-        
 
     return (
       <div className='todoContent'>
