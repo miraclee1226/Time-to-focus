@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 function QuotesList() {
 
 const quotes=[
 	{
-    "quote": "Genius is one percent inspiration and ninety-nine percent perspiration.",
-    "author": "Thomas Edison"
-    }, {
-    "quote": "You can observe a lot just by watching.",
-    "author": "Yogi Berra"
-    }, {
-    "quote": "A house divided against itself cannot stand.",
-    "author": "Abraham Lincoln"
-    }, {
-    "quote": "Difficulties increase the nearer we get to the goal.",
-    "author": "Johann Wolfgang von Goethe"
-    }, {
-    "quote": "Fate is in your hands and no one elses",
-    "author": "Byron Pulsifer"
-    }, {
-    "quote": "Be the chief but never the lord.",
-    "author": "Lao Tzu"
+	"quote": "You can observe a lot just by watching.",
+	"author": "Yogi Berra"
+	}, {
+	"quote": "A house divided against itself cannot stand.",
+	"author": "Abraham Lincoln"
+	}, {
+	"quote": "Difficulties increase the nearer we get to the goal.",
+	"author": "Johann Wolfgang von Goethe"
+	}, {
+	"quote": "Fate is in your hands and no one elses",
+	"author": "Byron Pulsifer"
+	}, {
+	"quote": "Be the chief but never the lord.",
+	"author": "Lao Tzu"
 	}, {
 	"quote": "Nothing happens unless first we dream.",
 	"author": "Carl Sandburg"
@@ -199,23 +196,11 @@ const quotes=[
 	"quote": "Change in all things is sweet.",
 	"author": "Aristotle"
 	}, {
-	"quote": "What you fear is that which requires action to overcome.",
-	"author": "Byron Pulsifer"
-	}, {
 	"quote": "The best teacher is experience learned from failures.",
 	"author": "Byron Pulsifer"
 	}, {
-	"quote": "When performance exceeds ambition, the overlap is called success.",
-	"author": "Cullen Hightower"
-	}, {
 	"quote": "When deeds speak, words are nothing.",
 	"author": "African proverb"
-	}, {
-	"quote": "Real magic in relationships means an absence of judgement of others.",
-	"author": "Wayne Dyer"
-	}, {
-	"quote": "When performance exceeds ambition, the overlap is called success.",
-	"author": "Cullen Hightower"
 	}, {
 	"quote": "I never think of the future. It comes soon enough.",
 	"author": "Albert Einstein"
@@ -253,9 +238,6 @@ const quotes=[
 	"quote": "Faith in oneself is the best and safest course.",
 	"author": "Michelangelo"
 	}, {
-	"quote": "Courage is going from failure to failure without losing enthusiasm.",
-	"author": "Winston Churchill"
-	}, {
 	"quote": "The two most powerful warriors are patience and time.",
 	"author": "Leo Tolstoy"
 	}, {
@@ -271,15 +253,6 @@ const quotes=[
 	"quote": "A short saying often contains much wisdom.",
 	"author": "Sophocles"
 	}, {
-	"quote": "The day is already blessed, find peace within it.",
-	"author": ""
-	}, {
-	"quote": "It takes both sunshine and rain to make a rainbow.",
-	"author": ""
-	}, {
-	"quote": "A beautiful thing is never perfect.",
-	"author": ""
-	}, {
 	"quote": "Only do what your heart tells you.",
 	"author": "Princess Diana"
 	}, {
@@ -291,9 +264,9 @@ const quotes=[
 const getRandomIndex = quotes[Math.floor(Math.random()*quotes.length)];
 
 return (
-	<div>
-		<p>{getRandomIndex.quote}</p>
-		<p>{getRandomIndex.author}</p>
+	<div className='quotes'>
+		<span>{getRandomIndex.quote}</span>
+		<span>- {getRandomIndex.author}</span>
 	</div>
 )
 }
