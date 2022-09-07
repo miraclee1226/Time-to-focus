@@ -33,10 +33,13 @@
 .leftnav {
   width: 250px;
   height: 540px;
-  background-color: #ffe5dd;
+  background-color: #Efeff1;
   margin-left: 15px;
   padding-top: 30px;
   border-radius: 20px;
+}
+.auto {
+  overflow: auto;
 }
 
 .leftnav a {
@@ -62,17 +65,23 @@
   flex-direction: column;
   justify-content: space-evenly;
   font-size: 18px;
-  width: 500px;
+  width: 700px;
   height: 100px;
-  padding-left: 15px;
+  padding-left: 20px;
   background-color: #ffe5dd;
   border-radius: 20px;
+}
+
+.quotes span:first-child{
+  margin-right: 20px;
+
 }
 
 .mainAndtimer {
   display: flex;
   justify-content: space-between;
   width: 1185px;
+  margin-bottom: 30px;
 
 }
 
@@ -80,7 +89,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 650px;
+  width: 450px;
   height: auto;
   padding-top: 20px;
   border-radius: 15px;
@@ -111,17 +120,18 @@
 
 .inputButton {
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 .inputButton input {
   width: 1080px;
-  height: 40px;
+  height: 45px;
   font-size: 15px;
   border: 0;
   border-radius: 10px;
   outline: none;
+  margin-top: 10px;
   padding-left: 20px;
-  margin-bottom: 50px;
   background-color: rgb(233, 233, 233);
 }
 
@@ -217,7 +227,7 @@ svg {
   align-items: center;
   justify-content: space-between;
   width: 1062px;
-  height: 50px;
+  height: 45px;
   padding: 0 20px;
   margin-bottom: 30px;
   font-size: 20px;
@@ -241,20 +251,11 @@ svg {
 
 /* Rest Component */
 
+.restTitle {
+  margin-left: 35px;
+}
 .player-wrapper {
-  position: relative;
-  width: 1300px;
-  
+  margin-left: 85px;
 }
-
-.react-player {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-    
-}
-
 
 
