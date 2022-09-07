@@ -9,7 +9,7 @@ function Someday() {
     let [text2, setText2] = useState("")
     let [list2, setList2] = useState(()=> {
       if (typeof window !== "undefined") {
-        const saved = window.localStorage.getItem("todoInLocal3");
+        const saved = window.localStorage.getItem("somedayInLocal");
         if(saved !== null) {
           return JSON.parse(saved);
         } else {
@@ -21,7 +21,7 @@ function Someday() {
     let [isValid2, setIsValid2] = useState(false)
 
     useEffect(()=>{
-      window.localStorage.setItem("todoInLocal3", JSON.stringify(list2));
+      window.localStorage.setItem("somedayInLocal", JSON.stringify(list2));
     }, [list2]);
 
     function post2 (e) {

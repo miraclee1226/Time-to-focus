@@ -15,13 +15,13 @@ function Home () {
           if(saved !== null) {
             return JSON.parse(saved);
           } else {
-            return [];
+            return (0);
           }
         }
       });
     let [todos, setTodos] = useState(()=> {
         if (typeof window !== "undefined") {
-          const saved = window.localStorage.getItem("todoInLocal1");
+          const saved = window.localStorage.getItem("todayInLocal");
           if(saved !== null) {
             return JSON.parse(saved);
           } else {
@@ -31,7 +31,7 @@ function Home () {
       });
     
     useEffect(()=> {
-        window.localStorage.setItem("todoInLocal1", JSON.stringify(todos));
+        window.localStorage.setItem("todayInLocal", JSON.stringify(todos));
         window.localStorage.setItem("doneInLocal", JSON.stringify(done));
       }, [todos, done]);
     
