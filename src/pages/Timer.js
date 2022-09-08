@@ -12,7 +12,7 @@ function Timer(props) {
   const initialTime = useRef(parseInt(props.min) * 60 + parseInt(props.sec));
   const interval = useRef(null);
   const [isActive, setIsActive] = useState(false);
-  const [displayMessage, setDisplayMessage] = useState(false);
+  const [displayMessage, setdisplayMessage] = useState(false);
   
   function toggle() {
     setIsActive(!isActive);
@@ -21,13 +21,12 @@ function Timer(props) {
   function coffeTime() {
     initialTime.current = 900
     interval = null
+    setdisplayMessage(!displayMessage);
 
     interval.current = setInterval(() => {
       initialTime.current -= 1;
-      const setMinpad = padNumber(parseInt(initialTime.current / 60), 2)
-      setMin(setMinpad);
-      const seSecPad =padNumber(initialTime.current % 60, 2)
-      setSec(seSecPad);
+      setMin(padNumber(parseInt(initialTime.current / 60), 2));
+      setSec(padNumber(initialTime.current % 60, 2));
     }, 1000);
 
       clearInterval(interval.current);
@@ -39,14 +38,12 @@ function Timer(props) {
 
     interval.current = setInterval(() => {
       initialTime.current -= 1;
-      const setMinpad = padNumber(parseInt(initialTime.current / 60), 2)
-      setMin(setMinpad);
-      const seSecPad =padNumber(initialTime.current % 60, 2)
-      setSec(seSecPad);
+      setMin(padNumber(parseInt(initialTime.current / 60), 2));
+      setSec(padNumber(initialTime.current % 60, 2));
     }, 1000);
-
       clearInterval(interval.current);
   }
+
   
   useEffect(() => {
       if (isActive) {
@@ -66,16 +63,19 @@ function Timer(props) {
       if(isActive) {
         if (initialTime.current === 0) {
           initialTime.current = 300
-          alert('Time to break! If you want to reset, Please click Reset button.')
-          // clearInterval(interval.current)
-          }         
-        }
+          setdisplayMessage(!displayMessage);
+          
+          
+        }      
+      }  
+        
         // clearInterval(interval.current)
         return ()=> clearInterval(interval.current)
     }, [isActive, min,sec])
       
         return (
             <div className="timer">
+              <div>{displayMessage && <div className="displayMessage">Break Time! <br /> If you want reset, please click Reset button.</div>}</div>
               <h2 className='minAndsec'>
                 {min} : {sec}
               </h2>
