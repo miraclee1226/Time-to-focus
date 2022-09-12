@@ -41,21 +41,19 @@ function Tomorrow() {
                 onChange={(e)=>{
                   setText2(e.target.value);
                 }}
-                onKeyUp={(e)=> {
-                  e.target.value.length > 0
-                  ? setIsValid2(true) 
-                  : setIsValid2(false);
-                  if(window.event.keyCode == 13){
-                    post2()
-                }
+                onKeyUp={(e)=> { 
+                  if(window.event.keyCode == 13) {
+                    if(e.target.value.length > 0) {
+                        setIsValid2(true) 
+                        post2()
+                      }
+                  } else {
+                    setIsValid2(false)
+                  }
                 }}
                 value={text2}
-                placeholder='✔ 할 일 추가 (Press Enter)' />
-                <button 
-                type='button'
-                onClick={post2}
-                disabled={isValid2 ? false : true}
-                >버튼</button>
+                placeholder='✔ 할 일 추가 (Press Enter)' 
+                />
             </div>
           </div>
 
