@@ -3,22 +3,30 @@ import React, {useState} from 'react';
 
 function TodoInsert({onAddTodo}) {
   let [newTodoItem, setNewTodoItem] = useState('');
+  let [isValid3, setIsValid3] = useState(false);
+  // let [toggle, setToggle] = useState(true);
 
   function todoInputHandler(e) {
-    e.preventDefault();
     setNewTodoItem(e.target.value);
   };
 
   function addTodoHandler(e) {
-    e.preventDefault();
     onAddTodo(newTodoItem);
     setNewTodoItem('');
   };
   
   return(
   <div className='inputButton'>
-    <input onChange={todoInputHandler} value={newTodoItem} placeholder='✔ 할 일 추가' />
-    <button onClick={addTodoHandler}>버튼</button>
+    <input onKeyUp={(e)=> { 
+      if(window.event.keyCode == 13) {
+        if(e.target.value.length > 0) {
+            setIsValid3(true) 
+            addTodoHandler()
+          }
+      } else {
+        setIsValid3(false)
+      }
+    }} onChange={todoInputHandler} value={newTodoItem} placeholder='✔ 할 일 추가 (Press Enter)' />
   </div>
   )
 }
