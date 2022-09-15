@@ -1,15 +1,11 @@
 import React from 'react';
 import {useState, useEffect, useRef} from 'react';
 
-function padNumber (num, length){
-    return String(num).padStart(length,'0');
-};
 
-function Timer(props) {
+function Timer() {
   
-  const [min, setMin] = useState(padNumber(parseInt(props.min), 2));
-  const [sec, setSec] = useState(padNumber(parseInt(props.sec), 2));
-  const initialTime = useRef(parseInt(props.min) * 60 + parseInt(props.sec));
+  const [minutes, setMinutes] = useState(25);
+  const [seconds, setSeconds] = useState(0);
   const interval = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const [displayMessage, setdisplayMessage] = useState(false);
@@ -18,76 +14,50 @@ function Timer(props) {
     setIsActive(!isActive);
   }
 
-  function coffeTime() {
-    initialTime.current = 900
-    interval = null
-    setdisplayMessage(!displayMessage);
+  useEffect(()=>{
+    if(isActive) {
+      interval.current = setInterval(()=>{
+        if (seconds === 0) {
+          if(minutes !== 0) {
+            setSeconds(59)
+            setMinutes(minutes - 1)
+          } else {
+            let minutes = displayMessage ? 24 : 4
+            let seconds = 59 
+            setSeconds(seconds)
+            setMinutes(minutes)
+            setdisplayMessage(!displayMessage)
+          }
+        } else {
+          setSeconds(seconds - 1)
+        }
+      }, 1000)
+    } else if (!isActive && minutes !== 0 && seconds !== 0) {
+      clearInterval(interval.current)
+    }
 
-    interval.current = setInterval(() => {
-      initialTime.current -= 1;
-      setMin(padNumber(parseInt(initialTime.current / 60), 2));
-      setSec(padNumber(initialTime.current % 60, 2));
-    }, 1000);
+    return () => clearInterval(interval.current)
+  }, [isActive, seconds])
 
-      clearInterval(interval.current);
-  }
-
-  function reset() {
-    initialTime.current = 1500
-    interval = null
-
-    interval.current = setInterval(() => {
-      initialTime.current -= 1;
-      setMin(padNumber(parseInt(initialTime.current / 60), 2));
-      setSec(padNumber(initialTime.current % 60, 2));
-    }, 1000);
-      clearInterval(interval.current);
-  }
-
-  
-  useEffect(() => {
-      if (isActive) {
-        interval.current = setInterval(() => {
-          initialTime.current -= 1;
-          setMin(padNumber(parseInt(initialTime.current / 60), 2));
-          setSec(padNumber(initialTime.current % 60, 2));
-        }, 1000);
-      } else if(!isActive && min !== 0 && sec !== 0) 
-      clearInterval(interval.current);
-
-      return ()=> clearInterval(interval.current)
-    }, [isActive, min, sec]);
-
-
-    useEffect(() => {  
-      if(isActive) {
-        if (initialTime.current === 0) {
-          initialTime.current = 300
-          setdisplayMessage(!displayMessage);
-          
-          
-        }      
-      }  
-        
-        // clearInterval(interval.current)
-        return ()=> clearInterval(interval.current)
-    }, [isActive, min,sec])
+  const timerMinutes = minutes < 10 ? `0${minutes}` : minutes
+  const timerSeconds = seconds < 10 ? `0${seconds}` : seconds
       
         return (
             <div className="timer">
-              <div>{displayMessage && <div className="displayMessage">Break Time! <br /> If you want reset, please click Reset button.</div>}</div>
+              <div>
+                {
+                displayMessage && 
+                <div className="displayMessage">
+                  Break Time!
+                </div>
+                }
+              </div>
               <h2 className='minAndsec'>
-                {min} : {sec}
+                {timerMinutes} : {timerSeconds}
               </h2>
               <div className='timerBtns'>
                 <button className='firstTimeBtn' onClick={toggle}>
                   {isActive ?  'Stop' : 'Start'}
-                </button>
-                <button onClick={reset}>
-                  Reset
-                </button>
-                <button onClick={coffeTime}>
-                  Coffee Time
                 </button>
               </div>
             </div>
