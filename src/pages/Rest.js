@@ -10,7 +10,7 @@ function Rest() {
     <div className='player-wrapper'>
     <ReactPlayer 
         className="react-player"
-        url={"https://www.youtube.com/watch?v=9LQsLPsKRq8"} 
+        url={"https://www.youtube.com/watch?v=jANE8lpoj2c"} 
         width="1100px"
         height="500px"
         playing={true}
