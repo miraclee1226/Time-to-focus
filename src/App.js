@@ -21,21 +21,24 @@ function App() {
     }, []);
 
   return (
-    <div className='App'>
+    <div className='scrollBar'>
       <div className='nav'>
         <h4>Pomodoro</h4>
       </div>
 
-      <div className='date'>{time.toLocaleTimeString()}</div>
       <div className='allContent'>
-        <div className='leftnav'>
-          <div className='todoLink'>
-            <Link to ="/">🌞 오늘 할 일</Link>
-            <Link to="/tomorrowtodo">📆 내일 할 일</Link>
-            <Link to="/someday">📅 추후</Link>
-            <Link to="/rest">😎 휴식</Link>
+          <div className='leftContainer'>
+            <div className='leftnav'>
+              <div className='todoLink'>
+                <Link to ="/">🌞 오늘 할 일</Link>
+                <Link to="/tomorrowtodo">📆 내일 할 일</Link>
+                <Link to="/someday">📅 추후</Link>
+                <Link to="/rest">🙌 휴식</Link>
+              </div>
+            </div>
+          <div className='date'>{time.toLocaleTimeString()}</div>
           </div>
-        </div>
+        
 
         <Routes>
           <Route path='/' element= {<Home />} />
