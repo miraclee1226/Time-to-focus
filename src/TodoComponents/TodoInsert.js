@@ -17,16 +17,19 @@ function TodoInsert({onAddTodo}) {
   
   return(
   <div className='inputButton'>
-    <input onKeyUp={(e)=> { 
-      if(window.event.keyCode == 13) {
-        if(e.target.value.length > 0) {
-            setIsValid3(true) 
-            addTodoHandler()
-          }
-      } else {
-        setIsValid3(false)
-      }
-    }} onChange={todoInputHandler} value={newTodoItem} placeholder='✔ 할 일 추가 (Press Enter)' />
+    <input 
+      className='insertBox'
+      onKeyUp={(e)=> { 
+            e.preventDefault();
+        if(window.event.keyCode == 13) {
+          if(e.target.value.length > 0) {
+              setIsValid3(true) 
+              addTodoHandler()
+            }
+        } else {
+          setIsValid3(false)
+        }
+      }} onChange={todoInputHandler} value={newTodoItem} placeholder='✔ 할 일 추가 (Press Enter)' />
   </div>
   )
 }
