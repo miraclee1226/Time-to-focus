@@ -7,8 +7,8 @@ import TodoList from '../TodoComponents/TodoList';
 import QuotesDatabase from '../QuotesDatabase';
 
 function Home () {
-    let min = useState(25)
-    let sec = useState(0)
+    // let min = useState(0)
+    // let sec = useState(5)
     let [done , setDone] = useState(()=> {
         if (typeof window !== "undefined") {
           const saved = window.localStorage.getItem("doneInLocal");
@@ -84,7 +84,7 @@ function Home () {
                         </div>
                     </div>
                     <div className='homeTimer'>
-                        <Timer min={min} sec={sec} />
+                        <Timer />
                     </div>
                 </div>
             </div>
