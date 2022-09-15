@@ -46,15 +46,6 @@ const quotes=[
 	"quote": "You'll see it when you believe it.",
 	"author": "Wayne Dyer"
 	}, {
-	"quote": "Today is the tomorrow we worried about yesterday.",
-	"author": ""
-	}, {
-	"quote": "It's easier to see the mistakes on someone else's paper.",
-	"author": ""
-	}, {
-	"quote": "Every man dies. Not every man really lives.",
-	"author": ""
-	}, {
 	"quote": "To lead people walk behind them.",
 	"author": "Lao Tzu"
 	}, {
@@ -82,9 +73,6 @@ const quotes=[
 	"quote": "Study the past, if you would divine the future.",
 	"author": "Confucius"
 	}, {
-	"quote": "The day is already blessed, find peace within it.",
-	"author": ""
-	}, {
 	"quote": "From error to error one discovers the entire truth.",
 	"author": "Sigmund Freud"
 	},{
@@ -108,9 +96,6 @@ const quotes=[
 	}, {
 	"quote": "One fails forward toward success.",
 	"author": "Charles Kettering"
-	}, {
-	"quote": "From small beginnings come great things.",
-	"author": ""
 	}, {
 	"quote": "Learning is a treasure that will follow its owner everywhere",
 	"author": "Chinese proverb"
