@@ -41,6 +41,7 @@ function Someday() {
             <div className='inputButton'>
               <input 
                 type="text" 
+                className='insertBox' 
                 onChange={(e)=>{
                   setText2(e.target.value);
                 }} 
@@ -60,9 +61,8 @@ function Someday() {
           </div>
 
           {
-          list2.map((textArr2, i) => {
-            return (
-              <div className='todolistitemStyle'>
+          list2.map((textArr2, i) => 
+              <div key={textArr2.id} className='todolistitemStyle'>
                 <div className='checkboxAndcontent'>
                   <p>{textArr2}</p>
                   </div>
@@ -75,7 +75,6 @@ function Someday() {
                   </div>
               </div>
             )
-          })
         }
 
         </div>

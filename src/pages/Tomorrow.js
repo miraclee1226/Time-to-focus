@@ -37,7 +37,8 @@ function Tomorrow() {
             <p>할 일</p>
             <div className='inputButton'>
               <input 
-                type="text" 
+                type="text"
+                className='insertBox' 
                 onChange={(e)=>{
                   setText2(e.target.value);
                 }}
@@ -58,9 +59,8 @@ function Tomorrow() {
           </div>
 
           {
-          list2.map((textArr2, i) => {
-            return (
-              <div className='todolistitemStyle'>
+          list2.map((textArr2, i) => 
+              <div key={textArr2.id} className='todolistitemStyle'>
                 <div className='checkboxAndcontent'>
                   <p>{textArr2}</p>
                 </div>
@@ -73,7 +73,6 @@ function Tomorrow() {
                 </div>
               </div>
             )
-          })
         }
 
         </div>
