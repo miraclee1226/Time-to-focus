@@ -23,7 +23,7 @@ function App() {
   return (
     <div className='scrollBar'>
       <div className='nav'>
-        <h4>Pomodoro</h4>
+        <h4>Time To Focus</h4>
       </div>
 
       <div className='allContent'>
