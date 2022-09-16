@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Josefin+Sans&family=Silkscreen&display=swap');
+
 *{
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
 }
 
+body {
+  background-color: #edeef0;
+}
 
 .nav {
   display: flex;
@@ -14,9 +18,8 @@
   height: 60px;
   font-size: 20px;
   color: white;
-  background-color: #f5dec9;
+  background-color: #909fa6;
   border-bottom: 1px solid rgb(233, 233, 233);
-  /* box-shadow: 0 2px 20px #d3d3d3; */
 }
 
 .date {
@@ -47,7 +50,7 @@
   position: fixed;
   width: 250px;
   height: 550px;
-  background-color: #f5dec9;
+  background-color: #d1dfe8;
   margin-top: 100px;
 }
 
@@ -82,7 +85,7 @@
   height: 120px;
   padding-left: 20px;
   color: #424e6a;
-  background-color: #f7f7fb;
+  background-color: whitesmoke;
   border-radius: 20px;
 }
 
@@ -106,8 +109,7 @@
   height: 160px;
   padding-top: 20px;
   border-radius: 15px;
-  color: #424e6a;
-  background-color:#c2d4e2;
+  background-color:#ede1e3;
 }
 
 .displayMessage {
@@ -152,7 +154,7 @@
   outline: none;
   margin-top: 10px;
   padding-left: 20px;
-  background-color: rgb(233, 233, 233);
+  background-color: lightgray;
 }
 
 .todoList {
@@ -194,10 +196,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-left: 50px; */
 }
 .minAndsec {
   font-size: 70px;
+  color: #424e6a;
+
   margin-bottom: 15px;
 }
 
@@ -209,10 +212,6 @@
   width: 330px;
 }
 
-.firstTimeBtn { 
-  margin-bottom: 20px;
-}
-
 .timerBtns button {
   font-size: 15px;
   height: 40px;
@@ -221,6 +220,7 @@
   border-radius: 10px;
   transition-duration: 0.4s;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .timerBtns button:hover {
@@ -257,7 +257,7 @@ svg {
   padding: 0 20px;
   margin-bottom: 15px;
   font-size: 20px;
-  background-color: bisque;
+  background-color: whitesmoke;
   border-radius: 10px;
 }
 
