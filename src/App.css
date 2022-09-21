@@ -9,7 +9,7 @@ body {
   background-color: #edeef0;
 }
 
-.nav {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +22,11 @@ body {
   border-bottom: 1px solid rgb(233, 233, 233);
 }
 
-.date {
+.nowTime {
   display: flex;
   font-size: 36px;
   justify-content: flex-start;
-  margin-top: 300px;
+  margin-top: 305px;
   margin-left: 22px;
 }
 
@@ -36,40 +36,33 @@ body {
   
 }
 
-.leftnav {
-  width: 250px;
-  height: 230px;
-  margin-left: 15px;
-  padding-top: 30px;
-  border-radius: 20px;
-}
-
-.leftContainer {
+.leftNav {
+  padding-top: 20px;
+  bottom: 60px;
   border-radius: 20px;
   margin-left: 20px;
   position: fixed;
   width: 250px;
-  height: 550px;
+  height: 530px;
   background-color: #d1dfe8;
-  margin-top: 100px;
 }
 
 .auto {
   overflow: auto;
 }
 
-.leftnav a {
+.leftNav a {
   text-decoration: none;
   color:rgb(11, 23, 35);
   font-size: 22px;
 }
 
-.todoLink {
+.leftNavLink {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 230px;
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .todayContent {
@@ -171,22 +164,22 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
-.scrollBar {
+.app {
   overflow: scroll;
 }
 
-.scrollBar::-webkit-scrollbar {
+.app::-webkit-scrollbar {
   width: 4px;
   height: 2px;
 }
-.scrollBar::-webkit-scrollbar-track {
+.app::-webkit-scrollbar-track {
   background-color: transparent;
 }
-.scrollBar::-webkit-scrollbar-thumb {
+.app::-webkit-scrollbar-thumb {
   border-radius: 1px;
   background-color:darkgrey
 }
-.scrollBar::-webkit-scrollbar-button {
+.app::-webkit-scrollbar-button {
   width: 0;
   height: 0;
 }
@@ -253,6 +246,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 1139px;
   height: 45px;
   padding: 0 20px;
   margin-bottom: 15px;
