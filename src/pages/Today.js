@@ -93,7 +93,14 @@ function Today () {
                     <p>할 일</p>
                     <div className='inputButton'>
                         <TodoInsert onAddTodo={addTodo} />
-                        <TodoList todos={todos} setTodos={setTodos} onRemove={onRemove} onToggle={onToggle} addDone={addDone} removeDone={removeDone} />
+                        <TodoList 
+                            todos={todos} 
+                            setTodos={setTodos} 
+                            onRemove={onRemove} 
+                            onToggle={onToggle} 
+                            addDone={addDone} 
+                            removeDone={removeDone} 
+                        />
                     </div>
                 </div>
             </div>

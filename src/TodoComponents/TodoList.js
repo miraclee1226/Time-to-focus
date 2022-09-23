@@ -6,8 +6,17 @@ function TodoList({todos, setTodos, onRemove, onToggle, addDone, removeDone}) {
     <div>
       {
         todos.map(todo => (
-          <TodoListItem {...todo} key={todo.id} todos={todos} setTodos={setTodos} onRemove={onRemove} onToggle={onToggle} addDone={addDone} removeDone={removeDone} />         
-        )
+            <TodoListItem 
+              {...todo} 
+              key={todo.id} 
+              todos={todos} 
+              setTodos={setTodos} 
+              onRemove={onRemove} 
+              onToggle={onToggle} 
+              addDone={addDone} 
+              removeDone={removeDone} 
+            />         
+          )
         )
       }
     </div>
