@@ -16,8 +16,6 @@ function Someday() {
       }
     });
     
-    let [isValid2, setIsValid2] = useState(false)
-
     useEffect(()=>{
       window.localStorage.setItem("somedayInLocal", JSON.stringify(list2));
     }, [list2]);
@@ -44,13 +42,10 @@ function Someday() {
                   setText2(e.target.value);
                 }} 
                 onKeyUp={(e)=> { 
-                  if(window.event.keyCode == 13) {
+                  if(e.key == 'Enter') {
                     if(e.target.value.length > 0) {
-                        setIsValid2(true) 
                         post2()
                       }
-                  } else {
-                    setIsValid2(false)
                   }
                 }}
                 value={text2}

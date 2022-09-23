@@ -14,8 +14,6 @@ function Tomorrow() {
         }
       }
     });
-
-    let [isValid2, setIsValid2] = useState(false);
     
     useEffect(()=>{
       localStorage.setItem("tomorrowInLocal", JSON.stringify(list2));
@@ -43,14 +41,11 @@ function Tomorrow() {
                   setText2(e.target.value);
                 }}
                 onKeyUp={(e)=> { 
-                  if(window.event.keyCode == 13) {
+                  if(e.key == 'Enter') {
                     if(e.target.value.length > 0) {
-                        setIsValid2(true) 
                         post2()
                       }
-                  } else {
-                    setIsValid2(false)
-                  }
+                  } 
                 }}
                 value={text2}
                 placeholder='✔ 할 일 추가 (Press Enter)' 
