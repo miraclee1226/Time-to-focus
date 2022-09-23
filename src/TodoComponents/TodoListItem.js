@@ -9,7 +9,6 @@ function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onTogg
   let [edited, setedited] = useState(false);
   const editInputRef = useRef(null);
   let [newText, setnewText] = useState(todos.textValue);
-  let [isValid3, setIsValid3] = useState(false);
 
   useEffect(()=> {
     //edit 모드일 때 포커싱 한다
@@ -45,14 +44,11 @@ function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onTogg
     let blankPattern = /^\s+|\s+$/g;
     if(window.event.keyCode == 13) {
       if(e.target.value.length > 0) {
-        setIsValid3(true) 
         onDoubleClick()
       } else if(e.target.value.replace(blankPattern,'') == ""){
         return false;
       }
-    } else {
-      setIsValid3(false)
-    }
+    } 
   }
 
   return (
@@ -78,9 +74,18 @@ function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onTogg
                 onBlur={handleInputBlur}
                 /> 
                 ) : ( // 수정 된 상태일 때
-                  <p onDoubleClick={onClickEditBtn} className={checked ? 'line' : 'noLine'}>{textValue}</p>
+                  <p 
+                    onDoubleClick={onClickEditBtn} 
+                    className={checked ? 'line' : 'noLine'}
+                  >
+                      {textValue}
+                  </p>
               )
-              ) : <p className={checked ? 'line' : 'noLine'}>{textValue}</p>  
+              ) : <p 
+                    className={checked ? 'line' : 'noLine'}
+                  >
+                    {textValue}
+                  </p>  
           }
       </div>
       <div className='removeboxDiv'>
