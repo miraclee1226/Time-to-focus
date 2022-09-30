@@ -19,7 +19,7 @@ function TodoInsert({onAddTodo}) {
       className='insertBox'
       onKeyUp={(e)=> { 
         e.preventDefault();
-        if(e.key == 'Enter' && e.target.value.length > 0) {
+        if(e.key === 'Enter' && e.target.value.length > 0) {
           addTodoHandler()
         } 
       }} 

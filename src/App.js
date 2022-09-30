@@ -24,7 +24,7 @@ function App() {
   return (
     <div className='app'>
       <div className='header'>
-        <h4>Time To Focus</h4>
+        <h4>Time to Focus</h4>
       </div>
 
       <div className='allContent'>

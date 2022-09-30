@@ -8,29 +8,25 @@ import QuotesDatabase from '../QuotesDatabase';
 
 function Today () {
     let [done , setDone] = useState(()=> {
-        if (typeof window !== "undefined") {
-          const saved = window.localStorage.getItem("doneInLocal");
-          if(saved !== null) {
-            return JSON.parse(saved);
-          } else {
-            return (0);
-          }
+        const saved = window.localStorage.getItem("doneInLocal");
+        if(saved !== null) {
+        return JSON.parse(saved);
+        } else {
+        return 0;
         }
       });
     let [todos, setTodos] = useState(()=> {
-        if (typeof window !== "undefined") {
-          const saved = window.localStorage.getItem("todayInLocal");
-          if(saved !== null) {
+        const saved = window.localStorage.getItem("todayInLocal");
+        if(saved !== null) {
             return JSON.parse(saved);
-          } else {
+        } else {
             return [];
-          }
         }
-      });
+    });
     
     useEffect(()=> {
-        window.localStorage.setItem("todayInLocal", JSON.stringify(todos));
         window.localStorage.setItem("doneInLocal", JSON.stringify(done));
+        window.localStorage.setItem("todayInLocal", JSON.stringify(todos));
       }, [todos, done]);
     
     const addTodo = useCallback((text)=>{

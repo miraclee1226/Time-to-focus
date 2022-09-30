@@ -7,7 +7,7 @@ import React from "react";
 function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onToggle, addDone, removeDone}) {
 
   let [edited, setedited] = useState(false);
-  const editInputRef = useRef(null);
+  const editInputRef = useRef();
   let [newText, setnewText] = useState(todos.textValue);
 
   useEffect(()=> {
@@ -16,38 +16,32 @@ function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onTogg
       editInputRef.current.focus();
     }
   }, [edited]);
+  
+  function onClickEditBtn() {
+    setedited(true);
+  }
+  
+  function onChangeEditInput(e) {
+    setnewText(e.target.value);
+  }
 
   function handleInputBlur() {
     <p onDoubleClick={onClickEditBtn} className={checked ? 'line' : 'noLine'}>{textValue}</p>
   }
 
-  function onClickEditBtn() {
-    setedited(true);
-  }
-
-  function onChangeEditInput(e) {
-    setnewText(e.target.value);
-  }
-
   function onDoubleClick() {
     const nextTodoList = todos.map(todo => ({ 
         ...todo,
-        textValue: todo.id === id ? newText : todo.textValue,
+        textValue: todo.id === id ? newText : todo.textValue
     }));
     setTodos(nextTodoList);
-
     setedited(false);
   }
 
   function onKeyUp (e) {
     e.preventDefault();
-    let blankPattern = /^\s+|\s+$/g;
-    if(window.event.keyCode == 13) {
-      if(e.target.value.length > 0) {
+    if(e.key === 'Enter' && e.target.value.length > 0) {
         onDoubleClick()
-      } else if(e.target.value.replace(blankPattern,'') == ""){
-        return false;
-      }
     } 
   }
 
@@ -56,24 +50,24 @@ function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onTogg
       <div className='checkboxAndcontent'>
           <div onClick={onToggle(id)} className='checkbox'>  
           { 
-          checked ? // checked: false;
+          checked ? // checked: true;
           <MdOutlineCheckBox onClick={removeDone} className='checkbox'/> : 
           <MdOutlineCheckBoxOutlineBlank onClick={addDone} className='checkbox'/> 
           }
           </div>
           {
-            !checked ? ( // 체크  안 된 상태일 때
-              edited ? (  // 편집 안 된 상태일 때
+            !checked ? ( // 체크 안 된 상태
+              edited ? (  // 수정 모드
                 <input 
                 type="text" 
-                value={newText || '' || undefined}
+                value={newText || ''}
                 className='editedInput'
-                ref={editInputRef}
+                ref={editInputRef} 
                 onChange={onChangeEditInput}
                 onKeyUp={onKeyUp}
                 onBlur={handleInputBlur}
                 /> 
-                ) : ( // 수정 된 상태일 때
+                ) : ( // 수정 모드 X
                   <p 
                     onDoubleClick={onClickEditBtn} 
                     className={checked ? 'line' : 'noLine'}
@@ -81,7 +75,7 @@ function TodoListItem({todos, setTodos, textValue, id, checked, onRemove, onTogg
                       {textValue}
                   </p>
               )
-              ) : <p 
+              ) : <p // 체크 된 상태
                     className={checked ? 'line' : 'noLine'}
                   >
                     {textValue}

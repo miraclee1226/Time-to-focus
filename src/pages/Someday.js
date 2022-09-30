@@ -4,27 +4,27 @@ import { FaRegTrashAlt } from "react-icons/fa"
 
 function Someday() {
 
-    let [text2, setText2] = useState("")
-    let [list2, setList2] = useState(()=> {
-      if (typeof window !== "undefined") {
+    let [text, setText] = useState("")
+    let [list, setList] = useState(()=> {
+
         const saved = window.localStorage.getItem("somedayInLocal");
         if(saved !== null) {
           return JSON.parse(saved);
         } else {
           return [];
         }
-      }
+      
     });
     
     useEffect(()=>{
-      window.localStorage.setItem("somedayInLocal", JSON.stringify(list2));
-    }, [list2]);
+      window.localStorage.setItem("somedayInLocal", JSON.stringify(list));
+    }, [list]);
 
-    function post2 (e) {
-        const copyList2 = [...list2];
-        copyList2.push(text2);
-        setList2(copyList2);
-        setText2('');
+    function post (e) {
+        const copyList = [...list];
+        copyList.push(text);
+        setList(copyList);
+        setText('');
     }
 
     return (
@@ -39,36 +39,36 @@ function Someday() {
                 type="text" 
                 className='insertBox' 
                 onChange={(e)=>{
-                  setText2(e.target.value);
+                  setText(e.target.value);
                 }} 
                 onKeyUp={(e)=> { 
-                  if(e.key == 'Enter') {
+                  if(e.key === 'Enter') {
                     if(e.target.value.length > 0) {
-                        post2()
+                        post()
                       }
                   }
                 }}
-                value={text2}
+                value={text}
                 placeholder='✔ 할 일 추가 (Press Enter)' />
             </div>
           </div>
 
           {
-          list2.map((textArr2, i) => 
-              <div key={textArr2.id} className='todolistitemStyle'>
-                <div className='checkboxAndcontent'>
-                  <p>{textArr2}</p>
-                  </div>
-                  <div className='removeboxDiv'>
-                    <FaRegTrashAlt className='removebox' onClick={()=>{
-                      let copy2 = [...list2];
-                      copy2.splice(i, 1);
-                      setList2(copy2);
-                    }}/>
-                  </div>
-              </div>
-            )
-        }
+            list.map((textArr, i) => 
+                <div key={textArr} className='todolistitemStyle'>
+                  <div className='checkboxAndcontent'>
+                    <p>{textArr}</p>
+                    </div>
+                    <div className='removeboxDiv'>
+                      <FaRegTrashAlt className='removebox' onClick={()=>{
+                        let copy2 = [...list];
+                        copy2.splice(i, 1);
+                        setList(copy2);
+                      }}/>
+                    </div>
+                </div>
+              )
+          }
 
         </div>
       </div>
