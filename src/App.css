@@ -274,12 +274,18 @@ svg {
 .restTitle {
   margin-left: 35px;
 }
+
 .player-wrapper {
   margin-left: 85px;
 }
 
+.iframe {
+  border: none;
+}
+
 
 /* Edit function */
+
 .editedInput {
   width: 970px;
   font-size: 20px;
