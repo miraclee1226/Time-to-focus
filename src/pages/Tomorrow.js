@@ -52,7 +52,7 @@ function Tomorrow() {
 
           {
             list.map((textArr, i) => 
-                <div key={textArr} className='todolistitemStyle'>
+                <div key={i} className='todolistitemStyle'>
                   <div className='checkboxAndcontent'>
                     <p>{textArr}</p>
                   </div>
