@@ -41,7 +41,7 @@ function App() {
         </div>
       </div>
         <Routes>
-          <Route path='/' element= {<Today />} />
+          <Route path='/today' element= {<Today />} />
           <Route path='/tomorrowtodo' element= {<Tomorrow />} />
           <Route path='/someday' element= {<Someday />} />
           <Route path='/rest' element= {<Rest />} />
