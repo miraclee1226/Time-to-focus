@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import {useState, useEffect} from 'react';
-import {Routes, Route, Link } from 'react-router-dom'
+import {Routes, Route, Link, BrowserRouter } from 'react-router-dom'
 import Today from './pages/Today'
 import Tomorrow  from './pages/Tomorrow';
 import Someday from './pages/Someday'
@@ -40,12 +40,14 @@ function App() {
           </div>
         </div>
       </div>
-        <Routes>
-          <Route path='/' element= {<Today />} />
-          <Route path='/tomorrowtodo' element= {<Tomorrow />} />
-          <Route path='/someday' element= {<Someday />} />
-          <Route path='/rest' element= {<Rest />} />
-        </Routes>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Routes>
+            <Route path='/' element= {<Today />} />
+            <Route path='/tomorrowtodo' element= {<Tomorrow />} />
+            <Route path='/someday' element= {<Someday />} />
+            <Route path='/rest' element= {<Rest />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   );
 }
