@@ -294,3 +294,63 @@ svg {
   background-color: #Efeff1;
 }
 
+@media all and (max-width: 768px){
+
+  .header {
+    width: 500px;
+  }
+
+  .leftNav {
+    position: fixed;
+    margin-left: 0;
+    /* margin-top: 0px; */
+    width: 500px;
+    height: 50px;
+    bottom: 0px;
+    border-radius: 0px;
+    background-color: #edeef0;
+  }
+
+  .leftNav a{
+    font-size: 17px;
+  }
+
+  .leftNavLink {
+    position: relative;
+    flex-direction: row;
+    margin-left: 0px;
+    height: 0px;
+  }
+
+  .nowTime {
+    display: none;
+  }
+
+  .todoContent {
+    margin-left: 30px;
+    margin-top: 80px;
+  }
+
+  .todayContent {
+    margin-left: 0px;
+  }
+
+  .textList2 {
+    margin-left: 0px;
+  }
+
+  .mainAndtimer {
+    flex-direction: column;
+  }
+
+  .todayMainContent {
+    background-color: #edeef0;
+    width: 420px;
+    height: 80px;
+    padding-left: 0px;
+    font-size: 20px;
+    border-radius: 0px;
+  }
+
+}
+
