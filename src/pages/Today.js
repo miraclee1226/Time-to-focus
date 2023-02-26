@@ -105,4 +105,4 @@ function Today () {
 }
 
 
-export default Today;
+export default React.memo(Today);
