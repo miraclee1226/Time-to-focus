@@ -5,8 +5,7 @@ import {Routes, Route, Link} from 'react-router-dom'
 import Today from './pages/Today'
 import Tomorrow  from './pages/Tomorrow';
 import Someday from './pages/Someday'
-import Rest from './pages/Rest';
-
+import Calender from './pages/Calender';
 
 
 function App() {
@@ -31,9 +30,9 @@ function App() {
         <div className='leftNav'>
           <div className='leftNavLink'>
             <Link to ="/">🌞 오늘 할 일</Link>
-            <Link to="/tomorrowtodo">📆 내일 할 일</Link>
+            <Link to="/tomorrow">📆 내일 할 일</Link>
             <Link to="/someday">📅 추후</Link>
-            <Link to="/rest">🙌 휴식</Link>
+            <Link to="/calender">🙌 달력</Link>
           </div>
           <div className='nowTime'>
             {time.toLocaleTimeString()}
@@ -41,10 +40,10 @@ function App() {
         </div>
       </div>
           <Routes>
-            <Route path='/' element= {<Today />} />
-            <Route path='/tomorrowtodo' element= {<Tomorrow />} />
-            <Route path='/someday' element= {<Someday />} />
-            <Route path='/rest' element= {<Rest />} />
+            <Route path='/' element={<Today />} />
+            <Route path='/tomorrow' element={<Tomorrow />} />
+            <Route path='/someday' element={<Someday />} />
+            <Route path='/calender' element={<Calender />} />
           </Routes>
     </div>
   );
