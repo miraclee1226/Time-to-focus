@@ -14,7 +14,7 @@ function TodoInsert({onAddTodo}) {
   };
   
   return(
-  <div className='inputButton'>
+  <div className='inputButton2'>
     <input 
       className='insertBox'
       onKeyUp={(e)=> { 
