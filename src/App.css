@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Josefin+Sans&family=Silkscreen&display=swap');
 
+
 *{
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
@@ -138,6 +139,10 @@ body {
   margin-bottom: 30px;
 }
 
+.inputButton2 {
+  margin-bottom: 30px;
+}
+
 .insertBox {
   width: 1160px;
   height: 45px;
@@ -164,22 +169,23 @@ body {
   background-color: rgb(233, 233, 233);
 }
 
-.app {
+body {
   overflow: scroll;
 }
 
-.app::-webkit-scrollbar {
-  width: 4px;
+body::-webkit-scrollbar {
+  width: 10px;
   height: 2px;
 }
-.app::-webkit-scrollbar-track {
+
+body::-webkit-scrollbar-track {
   background-color: transparent;
 }
-.app::-webkit-scrollbar-thumb {
-  border-radius: 1px;
-  background-color:darkgrey
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color:#909fa6;
 }
-.app::-webkit-scrollbar-button {
+body::-webkit-scrollbar-button {
   width: 0;
   height: 0;
 }
@@ -190,6 +196,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 .minAndsec {
   font-size: 70px;
   color: #424e6a;
@@ -294,21 +301,27 @@ svg {
   background-color: #Efeff1;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 768px) {
 
   .header {
-    width: 500px;
+    position: fixed;
+    width: 100%;
   }
 
   /*Left Navigation Bar*/
   .leftNav {
     position: fixed;
     margin-left: 0;
-    width: 500px;
-    height: 50px;
+    width: 100%;
+    height: 40px;
     bottom: 0px;
+    padding-top: 20px;
     border-radius: 0px;
     background-color: #edeef0;
+    border-top-style: solid;
+    border-top-color: #bdbebd;
+    border-top-width: 0.4px;
+    
   }
 
   .leftNav a {
@@ -322,14 +335,20 @@ svg {
     height: 0px;
   }
 
-  /*Time*/
+  .todayContent h1 {
+    margin-bottom: 0;
+  }
+  .quotes {
+    display: none;
+  }
+
   .nowTime {
     display: none;
   }
 
   .todoContent {
-    margin-left: 30px;
-    margin-top: 80px;
+    padding: 100px 30px 0 30px;
+    margin: 0;
   }
 
   .todayContent {
@@ -340,18 +359,73 @@ svg {
     margin-left: 0px;
   }
 
+  /*Timer*/
+
+  .timer {
+    flex-direction: row;
+
+  }
+
   .mainAndtimer {
+    width: 100%;
     flex-direction: column;
+  }
+
+  .homeTimer {
+    width: 100%;
+    height: 50px;
+    padding: 10px 0;
+
+  }
+
+  .minAndsec {
+    margin: 7px 30px 0 0;
+    font-size: 40px;
+  }
+
+  .timerBtns {
+    width: 100px;
+  }
+
+  .timerBtns button {
+    margin-bottom: 0px;
   }
 
   .todayMainContent {
     background-color: #edeef0;
-    width: 420px;
+    width: 100%;
     height: 80px;
     padding-left: 0px;
     font-size: 20px;
     border-radius: 0px;
   }
+
+  .insertBox {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .todolistitemStyle {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+  }
+
+  .checkbox svg{
+    width: 20px;
+    height: 20px;
+ }
+
+ .removebox {
+  width: 20px;
+  height: 20px;
+}
+
+/*Scroll Bar*/
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
+}
 
 }
 
