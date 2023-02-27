@@ -11,7 +11,8 @@ body {
 }
 
 .header {
-  display: flex;
+  display: none;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -276,19 +277,9 @@ svg {
   color: black;
 }
 
-/* Rest Component */
+/* Calender Component */
 
-.restTitle {
-  margin-left: 35px;
-}
 
-.player-wrapper {
-  margin-left: 85px;
-}
-
-.iframe {
-  border: none;
-}
 
 
 /* Edit function */
