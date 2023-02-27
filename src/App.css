@@ -294,9 +294,7 @@ svg {
   background-color: #Efeff1;
 }
 
-/* >= 768px (Desktop) */
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 390px) {
 
   .header {
     width: 500px;
