@@ -10,7 +10,7 @@ function Calender() {
   const firstWeek = today.clone().startOf('month').week();
   const lastWeek = today.clone().endOf('month').week() === 1 ? 53 : today.clone().endOf('month').week();
 
-  const calenderArr = () => {
+  function calenderArr () {
     let result = [];
     let week = firstWeek;
     for ( week; week <= lastWeek; week++ ) {
