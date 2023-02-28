@@ -29,7 +29,7 @@ function App() {
       <div className='allContent'>
         <div className='leftNav'>
           <div className='leftNavLink'>
-            <Link to ="/today">🌞 오늘 할 일</Link>
+            <Link to ="/">🌞 오늘 할 일</Link>
             <Link to="/tomorrow">📆 내일 할 일</Link>
             <Link to="/someday">📅 추후</Link>
             <Link to="/calender">🙌 달력</Link>
@@ -40,7 +40,7 @@ function App() {
         </div>
       </div>
           <Routes>
-            <Route path='/today' element={<Today />} />
+            <Route path='/' element={<Today />} />
             <Route path='/tomorrow' element={<Tomorrow />} />
             <Route path='/someday' element={<Someday />} />
             <Route path='/calender' element={<Calender />} />
