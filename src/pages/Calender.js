@@ -49,12 +49,21 @@ function Calender() {
   
   return (
     <div className='calender'>
-      <div>
+      <div className='calenderHeader'>
         <button onClick={()=> { setMoment(getMoment.clone().subtract(1, 'month')) }}>이전달</button>
         <span>{today.format('YYYY 년 MM 월')}</span>
         <button onClick={()=> { setMoment(getMoment.clone().add(1, 'month'))}}>다음달</button>
       </div>
-      <table>
+      <div className='calenderWeek'>
+        <div>Su</div>
+        <div>Mo</div>
+        <div>Tu</div>
+        <div>We</div>
+        <div>Th</div>
+        <div>Fr</div>
+        <div>Sa</div>
+      </div>
+      <table className='calenderTable'>
         <tbody>
           {calenderArr()}
         </tbody>
