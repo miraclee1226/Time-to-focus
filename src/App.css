@@ -279,11 +279,45 @@ svg {
 
 /* Calender Component */
 
+.calender {
+  display: grid;
+  margin-left: 305px;
+  margin-top: 110px;
+  margin-right: 30px;
+  height: 550px;
+}
 
+.calenderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.calenderWeek {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  font-size: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #444444;
+  padding: 10px;
+}
+
+.calenderTable {
+  height: 400px;
+  font-size: 20px;
+}
+
+.calenderTable td {
+  padding-left: 10px;
+  border-radius: 20px;
+  box-sizing: content-box;
+}
 
 
 /* Edit function */
-
 .editedInput {
   width: 970px;
   font-size: 20px;
@@ -294,12 +328,20 @@ svg {
 
 @media screen and (max-width: 768px) {
 
+  /* Scroll Bar */
+  body::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+  }
+
+  /* Main */
   .header {
     position: fixed;
     width: 100%;
   }
 
   /*Left Navigation Bar*/
+
   .leftNav {
     position: fixed;
     margin-left: 0;
@@ -354,7 +396,6 @@ svg {
 
   .timer {
     flex-direction: row;
-
   }
 
   .mainAndtimer {
@@ -407,16 +448,11 @@ svg {
     height: 20px;
  }
 
- .removebox {
+  .removebox {
   width: 20px;
   height: 20px;
-}
+  }
 
-/*Scroll Bar*/
-body::-webkit-scrollbar {
-  width: 5px;
-  height: 2px;
-}
 
 }
 
