@@ -11,6 +11,7 @@ body {
 }
 
 /* Scrollbar */
+
 body::-webkit-scrollbar {
   width: 10px;
   height: 2px;
@@ -30,6 +31,12 @@ body::-webkit-scrollbar-button {
   height: 0;
 }
 
+.auto {
+  overflow: auto;
+}
+
+/* App.js */
+
 .header {
   display: flex;
   justify-content: center;
@@ -43,6 +50,11 @@ body::-webkit-scrollbar-button {
   border-bottom: 1px solid rgb(233, 233, 233);
 }
 
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
 .nowTime {
   display: flex;
   font-size: 36px;
@@ -51,12 +63,7 @@ body::-webkit-scrollbar-button {
   margin-left: 22px;
 }
 
-.allContent {
-  display: flex;
-  justify-content: space-between;
-}
-
-.leftNav {
+.leftNavi {
   padding-top: 20px;
   bottom: 60px;
   border-radius: 20px;
@@ -67,17 +74,7 @@ body::-webkit-scrollbar-button {
   background-color: #d1dfe8;
 }
 
-.auto {
-  overflow: auto;
-}
-
-.leftNav a {
-  text-decoration: none;
-  color:rgb(11, 23, 35);
-  font-size: 22px;
-}
-
-.leftNavLink {
+.leftNaviLink {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -85,8 +82,25 @@ body::-webkit-scrollbar-button {
   margin-left: 40px;
 }
 
+.leftNavi a {
+  text-decoration: none;
+  color:rgb(11, 23, 35);
+  font-size: 22px;
+}
+
+/* Today.js */
+
+.todoContent {
+  margin-left: 265px;
+  margin-top: 110px;
+}
+
 .todayContent {
   margin-left: 50px;
+}
+
+.todayContent h1 {
+  margin-bottom: 15px;
 }
 
 .todayMainContent {
@@ -102,18 +116,26 @@ body::-webkit-scrollbar-button {
   border-radius: 20px;
 }
 
-.quotes span:first-child{
-  margin-right: 20px;
-}
 
-.mainAndtimer {
+.quotesAndtimer {
   display: flex;
   justify-content: space-between;
   width: 1180px;
   margin-bottom: 50px;
 }
 
-.homeTimer {
+.quotes span:first-child{
+  margin-right: 20px;
+}
+
+.displayMessage {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.timer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,40 +146,26 @@ body::-webkit-scrollbar-button {
   background-color:#ede1e3;
 }
 
-.displayMessage {
-  margin-bottom: 15px;
-  color: white;
-  font-size: 20px;
-  text-align: center;
-}
+/*Todo List*/
 
-.todoContent {
-  margin-left: 265px;
-  margin-top: 110px;
-}
-
-.todayContent h1 {
-  margin-bottom: 15px;
-}
-
-.textList {
-  margin-top: 30px;
-  
-}
-.textList2 {
+.addTodo {
   margin-left: 50px;
 }
 
-.textList p {
+.inputAndTodoist {
+  margin-top: 30px;
+}
+
+.inputAndTodoist p {
   font-size: 20px;
 }
 
-.inputButton {
+.insertboxAndtodolist {
   margin-top: 10px;
   margin-bottom: 30px;
 }
 
-.inputButton2 {
+.todoInsertBox {
   margin-bottom: 30px;
 }
 
@@ -324,7 +332,6 @@ svg {
   vertical-align: top;
   width: 167px;
 }
-
 
 /* Edit function */
 .editedInput {
