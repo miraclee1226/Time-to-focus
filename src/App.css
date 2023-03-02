@@ -11,7 +11,6 @@ body {
 }
 
 .header {
-  /* display: none; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +34,6 @@ body {
 .allContent {
   display: flex;
   justify-content: space-between;
-  
 }
 
 .leftNav {
@@ -359,7 +357,6 @@ svg {
   }
 
   /*Left Navigation Bar*/
-
   .leftNav {
     position: fixed;
     margin-left: 0;
@@ -372,7 +369,6 @@ svg {
     border-top-style: solid;
     border-top-color: #bdbebd;
     border-top-width: 0.4px;
-    
   }
 
   .leftNav a {
@@ -398,7 +394,7 @@ svg {
   }
 
   .todoContent {
-    padding: 100px 30px 0 30px;
+    padding: 100px 20px 0 20px;
     margin: 0;
   }
 
@@ -425,7 +421,6 @@ svg {
     width: 100%;
     height: 50px;
     padding: 10px 0;
-
   }
 
   .minAndsec {
@@ -464,13 +459,32 @@ svg {
   .checkbox svg{
     width: 20px;
     height: 20px;
- }
+  }
 
   .removebox {
   width: 20px;
   height: 20px;
   }
 
+  /*Calender*/
+  .calender {
+    margin: 100px 20px 0 20px;
+  }
 
+  .calenderHeader {
+    font-size: 25px;
+    margin-bottom: 20px;
+    align-items: normal;
+  }
+
+  .calenderWeek {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .calenderTable {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 }
 
