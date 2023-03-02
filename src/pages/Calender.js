@@ -1,6 +1,8 @@
 /* eslint-disable no-loop-func */
 import React, {useState} from 'react';
 import moment from 'moment';
+import {HiChevronLeft} from 'react-icons/hi';
+import {HiChevronRight} from 'react-icons/hi';
 
 
 function Calender() {
@@ -22,13 +24,13 @@ function Calender() {
 
               if(moment().format('YYYYMMDD') === days.format('YYYYMMDD')) {
                 return (
-                  <td key={index} style={{backgroundColor: 'red'}}>
+                  <td key={index} style={{backgroundColor: '#909fa6'}}>
                     <span>{days.format('D')}</span>
                   </td>
                 );
               } else if(days.format('MM') !== today.format('MM')) {
                 return (
-                  <td key={index} style={{backgroundColor: 'gray'}}>
+                  <td key={index} style={{backgroundColor: '#C0C0C0'}}>
                     <span>{days.format('D')}</span>
                   </td>
                 );
@@ -50,9 +52,9 @@ function Calender() {
   return (
     <div className='calender'>
       <div className='calenderHeader'>
-        <button onClick={()=> { setMoment(getMoment.clone().subtract(1, 'month')) }}>이전달</button>
+        <HiChevronLeft onClick={()=> { setMoment(getMoment.clone().subtract(1, 'month')) }} className="hichevronLeftIcon hichevronIcon"/>
         <span>{today.format('YYYY 년 MM 월')}</span>
-        <button onClick={()=> { setMoment(getMoment.clone().add(1, 'month'))}}>다음달</button>
+        <HiChevronRight onClick={()=> { setMoment(getMoment.clone().add(1, 'month'))}} className="hichevronRightIcon hichevronIcon"/>
       </div>
       <div className='calenderWeek'>
         <div>Su</div>

@@ -11,8 +11,8 @@ body {
 }
 
 .header {
-  display: none;
-  /* display: flex; */
+  /* display: none; */
+  display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -295,6 +295,22 @@ svg {
   margin-bottom: 30px;
 }
 
+.hichevronIcon {
+  width: 35px;
+  height: 35px;
+  color: gray;
+  cursor: pointer;
+}
+
+
+.hichevronLeftIcon {
+  margin-right: 60px;
+}
+
+.hichevronRightIcon {
+  margin-left: 60px;
+}
+
 .calenderWeek {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -314,7 +330,9 @@ svg {
   padding-left: 10px;
   border-radius: 20px;
   box-sizing: content-box;
+  width: 167px;
 }
+
 
 
 /* Edit function */
