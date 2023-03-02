@@ -26,9 +26,9 @@ function App() {
         <h4>Time to Focus</h4>
       </div>
 
-      <div className='allContent'>
-        <div className='leftNav'>
-          <div className='leftNavLink'>
+      <div className='content'>
+        <div className='leftNavi'>
+          <div className='leftNaviLink'>
             <Link to ="/">🌞 오늘 할 일</Link>
             <Link to="/tomorrow">📆 내일 할 일</Link>
             <Link to="/someday">📅 추후</Link>

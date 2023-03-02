@@ -69,7 +69,7 @@ function Today () {
     return (
         <div className='todoContent'>
             <div className='todayContent'>
-                <div className='mainAndtimer'>
+                <div className='quotesAndtimer'>
                     <div>
                         <h1>오늘</h1>
                         <div className='todayMainContent'>
@@ -77,17 +77,17 @@ function Today () {
                             <p>완료한 작업 개수 : {done}</p>
                         </div>
                     </div>
-                    <div className='homeTimer'>
+                    <div className='timer'>
                         <Timer />
                     </div>
                 </div>
             </div>
 
             {/* Add Todo */}
-            <div className='textList2'>
-                <div className='textList'>
+            <div className='addTodo'>
+                <div className='inputAndTodoist'>
                     <p>할 일</p>
-                    <div className='inputButton'>
+                    <div className='insertboxAndtodolist'>
                         <TodoInsert onAddTodo={addTodo} />
                         <TodoList 
                             todos={todos} 

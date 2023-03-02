@@ -32,9 +32,9 @@ function Someday() {
         <div className='todayContent'>
           <h1>추후</h1>
 
-          <div className='textList'>
+          <div className='inputAndTodoist'>
             <p>할 일</p>
-            <div className='inputButton'>
+            <div className='insertboxAndtodolist'>
               <input 
                 type="text" 
                 className='insertBox' 
