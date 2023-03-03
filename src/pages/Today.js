@@ -72,12 +72,12 @@ function Today () {
                 <div className='quotesAndtimer'>
                     <div>
                         <h1>오늘</h1>
-                        <div className='todayMainContent'>
+                        <div className='quotesAndcompletedplan'>
                             <QuotesDatabase />
                             <p>완료한 작업 개수 : {done}</p>
                         </div>
                     </div>
-                    <div className='timer'>
+                    <div className='todayTimer'>
                         <Timer />
                     </div>
                 </div>
