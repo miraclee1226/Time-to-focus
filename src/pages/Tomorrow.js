@@ -56,7 +56,7 @@ function Tomorrow() {
                   <div className='checkboxAndcontent'>
                     <p>{textArr}</p>
                   </div>
-                  <div className='removeboxDiv'>
+                  <div>
                     <FaRegTrashAlt className='removebox' onClick={()=>{
                       let copy = [...list];
                       copy.splice(i, 1);

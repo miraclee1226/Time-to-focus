@@ -59,7 +59,7 @@ function Someday() {
                   <div className='checkboxAndcontent'>
                     <p>{textArr}</p>
                     </div>
-                    <div className='removeboxDiv'>
+                    <div>
                       <FaRegTrashAlt className='removebox' onClick={()=>{
                         let copy2 = [...list];
                         copy2.splice(i, 1);
